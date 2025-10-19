@@ -3,7 +3,18 @@
 <head>
     <title>Моя не первая веб-страница</title>
     <style>
-      
+      @font-face {
+        font-family: San-Francisco;
+        src: url(assets/SFProText-Regular.ttf);
+        font-weight: normal;
+      }
+
+      @font-face {
+        font-family: San-Francisco;
+        src: url(assets/SFProText-Bold.ttf);
+        font-weight: bold;
+      }
+
       @keyframes intro {
     0% {
       transform: translateY(200px);
@@ -41,7 +52,7 @@
 }
 
         body {
-            font-family: SF Pro Text; /* Изменение шрифта на Arial */
+            font-family: 'San-Francisco'; /* Изменение шрифта на Arial */
             background-color: #121212; /* Светло-серый фоновый цвет */
             margin: 25px; /* Отступ от краёв страницы */
             padding: 0px;
