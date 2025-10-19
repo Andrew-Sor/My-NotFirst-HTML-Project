@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Моя не первая веб-страница</title>
+    <style>
+      
+      @keyframes intro {
+    0% {
+      transform: translateY(200px);
+      backdrop-filter: blur(0px);
+      background: #12121200;
+    }
+  
+    100% {
+      transform: translateY(0px);
+      backdrop-filter: blur(20px);
+      background: #121212aa;
+    }
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+      @keyframes head {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+        body {
+            font-family: SF Pro Text; /* Изменение шрифта на Arial */
+            background-color: #121212; /* Светло-серый фоновый цвет */
+            margin: 25px; /* Отступ от краёв страницы */
+            padding: 0px;
+          font-size: 14pt;
+          background: #000;
+        }
+      
+      body::before {
+        content: '';
+        position: fixed;
+        width: 100% !important;
+            background: url(https://i.ibb.co/4nMkjqJg/Vk.png);
+            background-size: cover;
+            background-position: 50%;
+            height: 100% !important;
+            background-attachment: fixed;
+        z-index: -1;
+        top: 0px;
+        left: 0px;
+        animation-name: fade;
+    animation-duration: 0.7s;
+    animation-fill-mode: backwards;
+      }
+      
+        h1 {
+            color: #ccc; /* Тёмно-синий цвет заголовка */
+            text-align: center; /* Выравнивание заголовка по центру */
+            font-weight: bold;
+            text-shadow: 0px 0px 15px #000;
+            margin-top: 300px;
+          margin-bottom: 200px;
+          font-size: 36pt;
+          animation-name: head;
+    animation-duration: 0.7s;
+    animation-fill-mode: backwards;
+    transition-duration: 0.5s;
+        }
+        p {
+            color: #ccc; /* Светло-серый цвет абзацев */
+            line-height: 1.6; /* Увеличение межстрочного интервала */
+            text-align: justify;
+            margin: 20px;
+          animation-name: fade;
+    animation-duration: 0.7s;
+    animation-fill-mode: backwards;
+    transition-duration: 0.5s;
+        }
+      
+      div.ps {
+            background: #121212aa;
+            padding: 1px 0px;
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: 0px 0px 20px #000c;
+        animation-name: intro;
+    animation-duration: 0.7s;
+    animation-fill-mode: backwards;
+          width: 85%;
+        margin: 0px auto 100px auto;
+        transition-duration: 0.5s;
+      }
+
+      #name {
+        background: none;
+        border: solid 0px #12121200;
+        font-size: 36pt;
+        font-weight: bold;
+        text-shadow: 0px 0px 15px #000;
+          animation-name: fade;
+    animation-duration: 0.7s;
+    animation-fill-mode: backwards;
+    text-align: center;
+    outline: none;
+    width: 70%;
+    border-radius: 25px;
+    transition-duration: 0.2s;
+      }
+
+      #name:focus {
+        border: solid 5px #121212aa;
+        transition-duration: 0.2s;
+      }
+    </style>
+    <script>
+      window.onload=function () {
+        document.getElementById('name').addEventListener("focusout", function () {
+          if (document.getElementById('name').value.endsWith(",")) {
+            document.getElementById('text').innerHTML = "добро пожаловать на мою страницу!";
+          } else {
+            if (document.getElementById('name').value == "") {
+              document.getElementById('text').innerHTML = "Добро пожаловать на мою страницу!";
+            } else {
+              document.getElementById('name').value = document.getElementById('name').value + ",";
+              document.getElementById('text').innerHTML = "добро пожаловать на мою страницу!";
+            };
+          };
+        });
+  }
+    </script>
+</head>
+<body>
+  <!--Сдать работу-->
+    <h1 id="h"><input type="text" id="name"><br><span id="text">Добро пожаловать на мою страницу!</span></h1>
+    <div class="ps">
+      <p>Это моя не первая веб-страница. Я учусь в колледже. Эта страница создана в рамках прохождения заданий по информатике.</p>
+      <p>HTML позволяет создавать структуру веб-страницы.</p>
+      <p>С помощью разных тегов можно добавлять заголовки, параграфы, ссылки, изображения и многое другое.</p>
+      <p>CSS позволяет изменять внешний вид элементов.</p>
+      <p>Но на самом деле он умеет гораздо больше, если знать множество различных приёмов!</p>
+      <p>А благодаря JavaScript можно сделать сайт более динамичным и реализовать взаимодействие пользователя с ним.</p>
+    <p>Я уже знаю HTML и CSS достаточно хорошо. А JS только учу. Мне предстоит научится самому главному и интересному в создании сайтов!</p>
+    <p></p>
+    <p>Я также создаю игру на Unreal Engine 5. Можете заглянуть <a href="https://andrew-sor.github.io/projectd">на её сайт</a>!</p>
+  </div>
+  <p>Создано Яндекс, © {неизвестный год}</p>
+  <p>Изменено и доработано Andrew_Sor, © 2025 г.</p>
+  </body>
+</html>
